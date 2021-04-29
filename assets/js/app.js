@@ -47,7 +47,7 @@ d3.csv("./assets/data/data.csv").then(function(demoData) {
     var bottomAxis = d3.axisBottom(xLinearScale);
     var leftAxis = d3.axisLeft(yLinearScale);
 
-     // Step 4: Append Axes to the chart
+     // Append Axes to the chart
     chartGroup.append("g")
       .attr("transform", `translate(0, ${height})`)
       .call(bottomAxis);
@@ -72,7 +72,7 @@ d3.csv("./assets/data/data.csv").then(function(demoData) {
       .enter()
       .append("text")
       .attr("x", d => xLinearScale(d.poverty))
-      .attr("y", d => yLinearScale(d.healthcareLow))
+      .attr("y", d => yLinearScale(d.healthcareLow - 0.15))
       .text(d => d.abbr)
       .classed("stateText", true);
 
