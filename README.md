@@ -22,12 +22,8 @@ The data set included with the assignment is based on 2014 ACS 1-year estimates 
 
 ### Secondary Chart
 
-* The additonal demographic, `Age`, was included along the x axis.  
+* The additional demographic, `Age`, was included along the x axis.  
 
 * Additional labels were placed in your scatter plot and given click events so that users can decide which data to display. Transitions were animated for your circles' locations as well as the range of your axes.
 
 <img src="https://github.com/kflores56/D3-challenge/blob/main/assets/images/age.png" />
-
-#### 2. Incorporate d3-tip
-
-While the ticks on the axes allow us to infer approximate values for each circle, it's impossible to determine the true value without adding another layer of data. Enter tooltips: developers can implement these in their D3 graphics to reveal a specific element's data when the user hovers their cursor over the element. Add tooltips to your circles and display each tooltip with the data that the user has selected. Use the `d3-tip.js` plugin developed by [Justin Palmer](https://github.com/Caged)—we've already included this plugin in your assignment directory.
