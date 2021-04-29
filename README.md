@@ -10,8 +10,6 @@ The data set included with the assignment is based on 2014 ACS 1-year estimates 
 
 ### Initial Chart
 
-![4-scatter](Images/4-scatter.jpg)
-
 * A scatter plot was created between two of the data variables: `Healthcare vs. Poverty`.
 
 * Using the D3 techniques, a scatter plot was created that represents each state with circle elements. The graphic was coded in the `app.js` file of the directory—the data pulled from `data.csv` by using the `d3.csv` function. 
@@ -20,7 +18,7 @@ The data set included with the assignment is based on 2014 ACS 1-year estimates 
 
 * Axes and labels were created and situated to the left and bottom of the chart.
 
-[Image1]{}
+<img src="https://github.com/kflores56/D3-challenge/blob/main/assets/images/Screen%20Shot%202021-04-29%20at%204.28.38%20PM.png" width="400"
 
 ### Secondary Chart
 
@@ -28,7 +26,7 @@ The data set included with the assignment is based on 2014 ACS 1-year estimates 
 
 * Additional labels were placed in your scatter plot and given click events so that users can decide which data to display. Transitions were animated for your circles' locations as well as the range of your axes.
 
-[Image2]{}
+<img src="https://github.com/kflores56/D3-challenge/blob/main/assets/images/Screen%20Shot%202021-04-29%20at%204.28.26%20PM.png" width="400"
 
 #### 2. Incorporate d3-tip
 
