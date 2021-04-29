@@ -99,7 +99,7 @@ d3.csv("./assets/data/data.csv").then(function(demoData) {
       .classed("stateCircle", true)
       .attr("opacity", ".5");
 
-    // Create labels for circles // POVERTY
+    // Create labels for circles //
     chartGroup.selectAll(null)
       .data(demoData)
       .enter()
@@ -164,13 +164,13 @@ d3.csv("./assets/data/data.csv").then(function(demoData) {
           .classed("active", false)
           .classed("inactive", true);
         chartGroup.selectAll(null)
-        .data(demoData)
-        .enter()
-        .append("text")
-        .attr("x", d => xLinearScale(d.poverty))
-        .attr("y", d => yLinearScale(d.healthcare - 0.15))
-        .text(d => d.abbr)
-        .classed("stateText", true);
+          .data(demoData)
+          .enter()
+          .append("text")
+          .attr("x", d => xLinearScale(d.poverty))
+          .attr("y", d => yLinearScale(d.healthcare - 0.15))
+          .text(d => d.abbr)
+          .classed("stateText", true);
         
       }
       else {
