@@ -1,12 +1,12 @@
 //// SET UP ////
 
-var svgWidth = 960;
+var svgWidth = 750;
 var svgHeight = 500;
 
 var margin = {
   top: 20,
   right: 40,
-  bottom: 80,
+  bottom: 60,
   left: 100
 };
 
@@ -30,7 +30,7 @@ d3.csv("./assets/data/data.csv").then(function(demoData) {
   // Parse Data
   demoData.forEach(function(data) {
     data.poverty = +data.poverty; 
-    data.healthcareLow = +data.healthcareLow;
+    data.healthcare = +data.healthcare;
     // data.abbr = +data.abbr;
   });
 
@@ -40,7 +40,7 @@ d3.csv("./assets/data/data.csv").then(function(demoData) {
       .range([0, width]);
 
     var yLinearScale = d3.scaleLinear()
-      .domain([0, d3.max(demoData, d => d.healthcareLow)])
+      .domain([0, d3.max(demoData, d => d.healthcare)])
       .range([height, 0]);
 
     // Create axis functions
@@ -61,18 +61,18 @@ d3.csv("./assets/data/data.csv").then(function(demoData) {
       .enter()
       .append("circle")
       .attr("cx", d => xLinearScale(d.poverty))
-      .attr("cy", d => yLinearScale(d.healthcareLow))
+      .attr("cy", d => yLinearScale(d.healthcare))
       .attr("r", "18")
       .classed("stateCircle", true)
       .attr("opacity", ".5");
 
     // Create labels for circles
-    chartGroup.selectAll("text")
+    chartGroup.selectAll(null)
       .data(demoData)
       .enter()
       .append("text")
       .attr("x", d => xLinearScale(d.poverty))
-      .attr("y", d => yLinearScale(d.healthcareLow - 0.15))
+      .attr("y", d => yLinearScale(d.healthcare - 0.15))
       .text(d => d.abbr)
       .classed("stateText", true);
 
