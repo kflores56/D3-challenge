@@ -18,7 +18,7 @@ var height = svgHeight - margin.top - margin.bottom;
 var svg = d3.select("#scatter")
   .append("svg")
   .attr("width", svgWidth)
-  .attr("height", svgHeight);
+  .attr("height", svgHeight + 25);
 
 // Append an SVG group
 var chartGroup = svg.append("g")
@@ -59,7 +59,7 @@ function renderCircles(circlesGroup, newXScale, chosenXAxis) {
   return circlesGroup;
 }
 
-  // Import Data
+// Import Data
 d3.csv("./assets/data/data.csv").then(function(demoData) {
 
   // Parse Data
@@ -68,11 +68,6 @@ d3.csv("./assets/data/data.csv").then(function(demoData) {
     data.healthcare = +data.healthcare;
     data.age = +data.age;
   });
-
-    // // Create scale functions // ONE AXIS
-    // var xLinearScale = d3.scaleLinear()
-    //   .domain([8.5, d3.max(demoData, d => d.poverty)])
-    //   .range([0, width]);
 
     // xLinearScale function above csv import
     var xLinearScale = xScale(demoData, chosenXAxis);
@@ -105,22 +100,12 @@ d3.csv("./assets/data/data.csv").then(function(demoData) {
       .attr("opacity", ".5");
 
     // Create labels for circles // POVERTY
-    var pov_abbr = chartGroup.selectAll(null)
+    chartGroup.selectAll(null)
       .data(demoData)
       .enter()
       .append("text")
       .attr("x", d => xLinearScale(d.poverty))
       .attr("y", d => yLinearScale(d.healthcare - 0.15))
-      .text(d => d.abbr)
-      .classed("stateText", true);
-    
-    // Create labels for circles // AGE
-    var age_abbr = chartGroup.selectAll(null)
-      .data(demoData)
-      .enter()
-      .append("text")
-      .attr("x", d => xLinearScale(d.age))
-      .attr("y", d => yLinearScale(d.healthcare))
       .text(d => d.abbr)
       .classed("stateText", true);
 
@@ -141,14 +126,6 @@ d3.csv("./assets/data/data.csv").then(function(demoData) {
       .attr("value", "age") // value to grab for event listener
       .classed("inactive", true)
       .text("Age (years)");
-
-  // // Creat x axis // ONE x axis
-  //   chartGroup.append("text")
-  //     .attr("transform", `translate(${width / 2.15}, ${height + margin.top + 30})`)
-  //     .attr("class", "axisText")
-  //     .text("Poverty Rate (%)");
-  // }).catch(function(error) {
-  //   console.log(error);
     
     // Create y axis labels
     chartGroup.append("text")
@@ -169,9 +146,6 @@ d3.csv("./assets/data/data.csv").then(function(demoData) {
       // replaces chosenXAxis with value
       chosenXAxis = value;
 
-      // console.log(chosenXAxis)
-
-      // functions here found above csv import
       // updates x scale for new data
       xLinearScale = xScale(demoData, chosenXAxis);
 
