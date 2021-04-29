@@ -18,7 +18,7 @@ The data set included with the assignment is based on 2014 ACS 1-year estimates 
 
 * Axes and labels were created and situated to the left and bottom of the chart.
 
-<img src="https://github.com/kflores56/D3-challenge/blob/main/assets/images/Screen%20Shot%202021-04-29%20at%204.28.38%20PM.png" />
+<img src="https://github.com/kflores56/D3-challenge/blob/main/assets/images/poverty.png" />
 
 ### Secondary Chart
 
@@ -26,7 +26,7 @@ The data set included with the assignment is based on 2014 ACS 1-year estimates 
 
 * Additional labels were placed in your scatter plot and given click events so that users can decide which data to display. Transitions were animated for your circles' locations as well as the range of your axes.
 
-<img src="https://github.com/kflores56/D3-challenge/blob/main/assets/images/Screen%20Shot%202021-04-29%20at%204.28.26%20PM.png" />
+<img src="https://github.com/kflores56/D3-challenge/blob/main/assets/images/age.png" />
 
 #### 2. Incorporate d3-tip
 
