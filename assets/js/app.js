@@ -62,7 +62,7 @@ d3.csv("./assets/data/data.csv").then(function(demoData) {
       .append("circle")
       .attr("cx", d => xLinearScale(d.poverty))
       .attr("cy", d => yLinearScale(d.healthcareLow))
-      .attr("r", "15")
+      .attr("r", "18")
       .classed("stateCircle", true)
       .attr("opacity", ".5");
 
@@ -73,7 +73,7 @@ d3.csv("./assets/data/data.csv").then(function(demoData) {
       .append("text")
       .attr("x", d => xLinearScale(d.poverty))
       .attr("y", d => yLinearScale(d.healthcareLow))
-      .text(d => `${d.abbr}`)
+      .text(d => d.abbr)
       .classed("stateText", true);
 
     // Create axes labels
